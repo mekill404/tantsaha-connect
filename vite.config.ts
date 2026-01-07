@@ -9,6 +9,7 @@ export default defineConfig({
     tailwindcss(), 
     react(),
     VitePWA({
+      base: '/tantsaha-connect/',
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'Logo.png', 'apple-touch-icon.png'],
       manifest: {
@@ -18,7 +19,7 @@ export default defineConfig({
         theme_color: '#58cc02',
         background_color: '#000000',
         display: 'standalone',
-        start_url: '/tantsaha-connect/', // <--- AJOUTE BIEN LE NOM DU REPO ICI
+        start_url: '/tantsaha-connect/',
         scope: '/tantsaha-connect/',
         icons: [
           {
