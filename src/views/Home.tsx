@@ -24,8 +24,6 @@ const Home = () => {
       try {
         const data = await fetchWeatherData();
         setWeatherData(data.current);
-
-        // Calcul dynamique des alertes météo
         let counts = 0;
         const condition = data.current.condition.toLowerCase();
         const temp = data.current.temp;
@@ -47,8 +45,6 @@ const Home = () => {
   }, []);
 
   const totalAlerts = alertsData.length + autoAlertsCount;
-
-  // Utilisation de navigate() pour rester dans le contexte de l'application
   const navigateTo = (path: string) => {
     navigate(path);
   };
@@ -58,10 +54,8 @@ const Home = () => {
       <main className="p-5 md:p-10 max-w-6xl mx-auto">
         <Header title={appData.title} subtitle={appData.subtitle} />
         
-        {/* Bouton d'installation PWA */}
         <InstallButton />
 
-        {/* Widget Météo avec redirection corrigée */}
         <MeteoWidget 
           temp={loading ? 0 : weatherData?.temp} 
           condition={loading ? "Mizaha..." : weatherData?.condition} 
@@ -74,7 +68,6 @@ const Home = () => {
           <h3 className="text-xl font-black text-slate-700 uppercase tracking-widest">Asa lehibe</h3>
         </div>
 
-        {/* Grille d'actions avec navigation React Router */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
           <ActionCard 
             title="Toetr'andro" 

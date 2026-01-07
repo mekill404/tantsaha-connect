@@ -18,7 +18,7 @@ const AppContent = () => {
     <div className="animate-in fade-in duration-700">
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<Navigate to="fandraisana" replace />} />
+          <Route index element={<Home />} />
           <Route path="fandraisana" element={<Home />} />
           <Route path="toetr_andro" element={<Meteo />} />
           <Route path="fanairana" element={<Alert />} />
