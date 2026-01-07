@@ -1,0 +1,5 @@
+[
+  { "id": 1, "title": "Alerte parasites", "madLabel": "Fanairana bibikely", "date": "Anio", "icon": "fa-bug", "type": "maika", "description": "Valala eo akaiky" },
+  { "id": 2, "title": "Temps de récolter", "madLabel": "Fotoana ny fijinjana", "date": "18 Nov", "icon": "fa-apple-whole", "type": "zava-dehibe", "description": "Voankazo masaka" },
+  { "id": 3, "title": "Semences riz", "madLabel": "Famafazana vary", "date": "20 Nov", "icon": "fa-seedling", "type": "mahazatra", "description": "Fotoana tsara hamafazana" }
+]

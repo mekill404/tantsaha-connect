@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "title": "Lutter contre les sauterelles",
+    "madLabel": "Miady amin'ny valala",
+    "category": "bibikely",
+    "icon": "fa-bug",
+    "color": "bg-red-500",
+    "duration": "2:30",
+    "description": "Utilisation de pesticides naturels à base de Neem.",
+    "content": "1. Recherchez 1kg de feuilles de Neem (ou d'eucalyptus).\n2. Écrasez finement les feuilles et dissolvez-les dans 5 litres d'eau.\n3. Laissez macérer pendant 24 heures.\n4. Filtrez le mélange et ajoutez un peu de savon pour l'adhérence.\n5. Pulvérisez sur les cultures tôt le matin ou tard le soir."
+  },
+  {
+    "id": 2,
+    "title": "Irrigation du riz",
+    "madLabel": "Fanondrahana ny vary",
+    "category": "rano",
+    "icon": "fa-droplet",
+    "color": "bg-tantsaha-blue",
+    "duration": "3:15",
+    "description": "Méthodes de gestion de l'eau pour optimiser le rendement.",
+    "content": "- Pendant le tallage : Maintenez le niveau d'eau entre 2 et 3 cm.\n- Pendant la floraison : Augmentez le niveau d'eau à 5 cm.\n- 15 jours avant la récolte : Coupez complètement l'eau pour permettre une maturation uniforme des grains."
+  },
+  {
+    "id": 3,
+    "title": "Rotation des cultures",
+    "madLabel": "Fanovana ny zava-mbolena",
+    "category": "fambolena",
+    "icon": "fa-arrows-rotate",
+    "color": "bg-purple-500",
+    "duration": "3:00",
+    "description": "Technique agricole pour enrichir naturellement le sol.",
+    "content": "Évitez de planter la même culture successivement sur la même parcelle.\n- Année 1 : Légumineuses (Haricots, arachides) pour fixer l'azote.\n- Année 2 : Céréales (Maïs, riz).\n- Année 3 : Légumes racines (Manioc, patate douce).\nCette méthode prévient l'épuisement du sol et casse le cycle de vie des parasites."
+  }
+]

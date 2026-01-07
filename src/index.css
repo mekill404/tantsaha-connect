@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tantsaha-green: #58cc02;
+  --color-tantsaha-green-border: #46a302;
+  --color-tantsaha-blue: #1cb0f6;
+  --color-tantsaha-blue-border: #1899d6;
+  --color-tantsaha-orange: #ff9600;
+  --color-tantsaha-orange-border: #e58600;
+  --color-tantsaha-purple: #ce82ff;
+  --color-tantsaha-purple-border: #af6eff;
+  --color-tantsaha-yellow: #ffc800;
+  --color-tantsaha-yellow-border: #e5a400;
+}
+
+.btn-3d {
+  border-bottom-width: 5px;
+  transition: all 0.1s;
+}
+
+.btn-3d:active {
+  border-bottom-width: 0px;
+  transform: translateY(5px);
+}
+
+@keyframes pulse-light {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.1); }
+}
+.animate-pulse-light {
+  animation: pulse-light 2s infinite ease-in-out;
+}
+
+@keyframes loading-bar {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.animate-loading-bar {
+  animation: loading-bar 1.5s infinite linear;
+}
+.splash-exit {
+  animation: splash-fade-out 0.8s forwards cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes splash-fade-out {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100%); opacity: 0; visibility: hidden; }
+}
+.badge-pop {
+  animation: badge-scale 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes badge-scale {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Fambolen-bary",
+    "madLabel": "Plantation riz",
+    "details": "Tanimbary atsinanana",
+    "description": "Nampiasaina ny masomby ratsy sady efa nisy zezika vitsivitsy. Ny tanimbary dia mirefy 2 ha.",
+    "date": "15 Nov 2025",
+    "month": "nov. 2025",
+    "type": "fambolena",
+    "icon": "fa-seedling",
+    "colorClass": "bg-tantsaha-green"
+  }
+]
