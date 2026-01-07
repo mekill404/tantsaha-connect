@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import crucial pour la navigation PWA
 import Header from '../components/layout/Header';
 import MeteoWidget from '../components/ui/MeteoWidget';
 import ActionCard from '../components/layout/ActionCard';
@@ -7,6 +8,7 @@ import alertsData from '../data/alerts.json';
 import InstallButton from '../components/InstallButton';
 
 const Home = () => {
+  const navigate = useNavigate(); // Initialisation du moteur de navigation
   const [weatherData, setWeatherData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [autoAlertsCount, setAutoAlertsCount] = useState(0);
@@ -19,26 +21,26 @@ const Home = () => {
   useEffect(() => {
     const getLiveUpdates = async () => {
       setLoading(true);
-      const data = await fetchWeatherData();
-      setWeatherData(data.current);
+      try {
+        const data = await fetchWeatherData();
+        setWeatherData(data.current);
 
-      let counts = 0;
-      const condition = data.current.condition.toLowerCase();
-      const temp = data.current.temp;
-      const windSpeed = parseInt(data.current.wind);
+        // Calcul dynamique des alertes météo
+        let counts = 0;
+        const condition = data.current.condition.toLowerCase();
+        const temp = data.current.temp;
+        const windSpeed = parseInt(data.current.wind);
 
-      if (condition.includes('pluie') || condition.includes('orage') || condition.includes('averse')) {
-        counts++;
-      }
-      if (temp > 32) {
-        counts++;
-      }
-      if (windSpeed > 25) {
-        counts++;
-      }
+        if (condition.includes('pluie') || condition.includes('orage') || condition.includes('averse')) counts++;
+        if (temp > 32) counts++;
+        if (windSpeed > 25) counts++;
 
-      setAutoAlertsCount(counts);
-      setLoading(false);
+        setAutoAlertsCount(counts);
+      } catch (err) {
+        console.error("Erreur récupération météo", err);
+      } finally {
+        setLoading(false);
+      }
     };
 
     getLiveUpdates();
@@ -46,18 +48,23 @@ const Home = () => {
 
   const totalAlerts = alertsData.length + autoAlertsCount;
 
+  // Utilisation de navigate() pour rester dans le contexte de l'application
   const navigateTo = (path: string) => {
-    window.location.href = path;
+    navigate(path);
   };
 
   return (
     <div className="bg-white min-h-screen font-sans pb-10">
       <main className="p-5 md:p-10 max-w-6xl mx-auto">
         <Header title={appData.title} subtitle={appData.subtitle} />
+        
+        {/* Bouton d'installation PWA */}
         <InstallButton />
+
+        {/* Widget Météo avec redirection corrigée */}
         <MeteoWidget 
           temp={loading ? 0 : weatherData?.temp} 
-          condition={loading ? "Andraso kely..." : weatherData?.condition} 
+          condition={loading ? "Mizaha..." : weatherData?.condition} 
           iconClass={loading ? "fa-circle-notch animate-spin" : weatherData?.iconClass}
           onViewDetails={() => navigateTo('/toetr_andro')}
         />
@@ -67,6 +74,7 @@ const Home = () => {
           <h3 className="text-xl font-black text-slate-700 uppercase tracking-widest">Asa lehibe</h3>
         </div>
 
+        {/* Grille d'actions avec navigation React Router */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
           <ActionCard 
             title="Toetr'andro" 
@@ -85,7 +93,6 @@ const Home = () => {
             onClick={() => navigateTo('/fanairana')} 
           />
 
-          {/* ... autres ActionCards ... */}
           <ActionCard 
             title="Boky" 
             icon="fa-book-bookmark" 
@@ -93,6 +100,7 @@ const Home = () => {
             borderClass="border-tantsaha-purple-border" 
             onClick={() => navigateTo('/boky')}
           />
+
           <ActionCard 
             title="Torohevitra" 
             icon="fa-lightbulb" 
