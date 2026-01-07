@@ -19,7 +19,8 @@
       "purpose": "maskable"
     }
   ],
-  "start_url": ".",
+  "start_url": "/tantsaha-connect/",
+  "scope": "/tantsaha-connect/",
   "display": "standalone",
   "theme_color": "#22c55e",
   "background_color": "#ffffff"

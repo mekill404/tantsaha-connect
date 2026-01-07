@@ -18,7 +18,8 @@ export default defineConfig({
         theme_color: '#58cc02',
         background_color: '#000000',
         display: 'standalone',
-        start_url: '/',
+        start_url: '/tantsaha-connect/', // <--- AJOUTE BIEN LE NOM DU REPO ICI
+        scope: '/tantsaha-connect/',
         icons: [
           {
             src: 'logo.png',
