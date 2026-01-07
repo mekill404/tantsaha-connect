@@ -16,19 +16,20 @@ const ConseilCard = ({ item, onPlay, onRead }: any) => (
         <div className="flex gap-2">
           <Button 
             label="Hihaino"
-            icon="fa-play"
+            icon="fa-headphones"
             onClick={() => onPlay(item)}
             className="flex-1 text-[10px] py-2 px-0" 
             colorClass="bg-tantsaha-blue"
             borderClass="border-tantsaha-blue-border"
           />
+          
           <Button 
             label="Vakio"
             icon="fa-book-open"
             onClick={() => onRead(item)}
-            className="flex-1 text-[10px] py-2 px-0 text-slate-500"
-            colorClass="bg-slate-100"
-            borderClass="border-slate-200"
+            className="flex-1 text-[10px] py-2 px-0 text-white" 
+            colorClass="bg-tantsaha-green"
+            borderClass="border-tantsaha-green-border"
           />
         </div>
       </div>
